@@ -1,10 +1,13 @@
 ---
 - hosts: all
+  become: true
   pre_tasks:
     - name: Install python for Ansible
       raw: test -e /usr/bin/python3 || (yum install -y python3)
-      become: true
       changed_when: false
   roles:
-  - gepardec.ntp
-  - gepardec.okd
+  - role: gepardec.ntp
+  - role: gepardec.okd
+    vars: 
+      okd_public_hostname: "192.168.0.2"
+    

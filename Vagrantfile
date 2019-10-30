@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 22, host: $SSH, id: 'ssh'
 
   config.vm.provision "ansible" do |ansible|
+    ansible.galaxy_role_file = "requirements.yml"
     ansible.playbook = "playbook.yml"
   end
   
