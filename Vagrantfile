@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 #########################
-$CPU = 4
+$CPU = 2
 $MEMORY = 8192
 $CPUEXECUTIONCAP = 50
 $IP = "192.168.0.2"
@@ -22,9 +22,9 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: $IP
   config.vm.network "forwarded_port", guest: 22, host: $SSH, id: 'ssh'
 
-  config.vm.provision "ansible" do |ansible|
-    ansible.galaxy_role_file = "requirements.yml"
-    ansible.playbook = "playbook.yml"
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.galaxy_role_file = "/vagrant/requirements.yml"
+    ansible.playbook = "/vagrant/playbook.yml"
   end
   
 end
