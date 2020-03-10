@@ -34,6 +34,7 @@ vagrant up
 ### Access OKD
 
 Open https://192.168.0.5:8443/console in your browser from your local workstation to access the okd web console.
+
 **Hint:** if you use hyper-v you need to check the ip of your VM manually. The IP of a hyper-v vm can not be set to a static ip.
 
 ### Users
