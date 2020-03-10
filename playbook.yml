@@ -6,8 +6,7 @@
       raw: test -e /usr/bin/python3 || (yum install -y python3)
       changed_when: false
   roles:
-  - role: gepardec.ntp
-  - role: gepardec.okd
-    vars: 
-      okd_public_hostname: "192.168.0.2"
+    - role: gepardec.basics
+    - role: gepardec.ntp
+    - role: gepardec.okd
     

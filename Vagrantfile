@@ -3,11 +3,11 @@
 
 #########################
 $CPU = 2
-$MEMORY = 8192
+$MEMORY = 4096
 $CPUEXECUTIONCAP = 50
-$IP = "192.168.0.2"
+$IP = "192.168.0.5"
 $BASEOS = "centos/7"
-$SSH=2223
+$SSH=2225
 #########################
 
 Vagrant.configure("2") do |config|
@@ -19,6 +19,13 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--cpuexecutioncap", $CPUEXECUTIONCAP]
   end
   
+  config.vm.provider "hyperv" do |v|
+    v.memory = $MEMORY
+    v.cpus = $CPU
+  end
+
+  config.vm.synced_folder ".", "/vagrant"
+
   config.vm.network "private_network", ip: $IP
   config.vm.network "forwarded_port", guest: 22, host: $SSH, id: 'ssh'
 
