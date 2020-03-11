@@ -5,6 +5,12 @@
     - name: Install python for Ansible
       raw: test -e /usr/bin/python3 || (yum install -y python3)
       changed_when: false
+    - debug: 
+        var: ansible_facts
+        verbosity: 2
+    - debug: 
+        var: ansible_facts['eth1']['ipv4']['address']
+        verbosity: 1
   tasks:
     - include_role:
         name: gepardec.basics
@@ -13,6 +19,6 @@
     - include_role:
         name: gepardec.okd
       vars: 
-        okd_public_hostname: "192.168.0.5"
+        okd_public_hostname: "{{ ansible_facts['eth1']['ipv4']['address'] }}"
 ...
     
