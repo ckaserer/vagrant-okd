@@ -3,7 +3,7 @@
 
 #########################
 $CPU = 2
-$MEMORY = 4096
+$MEMORY = 2048
 $CPUEXECUTIONCAP = 50 # does not work with hyper-v
 $IP = "192.168.0.5"   # does not work with hyper-v # https://www.vagrantup.com/docs/hyperv/limitations.html
 $BASEOS = "centos/7"

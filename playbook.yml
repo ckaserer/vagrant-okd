@@ -9,7 +9,7 @@
         var: ansible_facts
         verbosity: 2
     - debug: 
-        var: ansible_facts['eth1']['ipv4']['address']
+        var: ansible_facts['eth0']['ipv4']['address']
         verbosity: 1
   tasks:
     - include_role:
@@ -19,6 +19,6 @@
     - include_role:
         name: gepardec.okd
       vars: 
-        okd_public_hostname: "{{ ansible_facts['eth1']['ipv4']['address'] }}"
+        okd_public_hostname: "{{ ansible_facts['eth0']['ipv4']['address'] }}"
 ...
     
