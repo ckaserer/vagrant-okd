@@ -1,0 +1,7 @@
+windows:
+  tags:
+    - windows
+  script:
+    - vagrant up
+  only:
+    - feature/actions

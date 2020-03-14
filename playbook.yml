@@ -12,6 +12,10 @@
         var: ansible_facts['eth0']['ipv4']['address']
         verbosity: 1
   tasks:
+    - name: create docker config.json
+      raw: mkdir -p /root/.docker && echo "{}" > /root/.docker/config.json
+      become: true
+      changed_when: false
     - include_role:
         name: gepardec.basics
     - include_role:
