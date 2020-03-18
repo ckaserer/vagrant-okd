@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     v.cpus = $CPU
   end
 
-  config.vm.provider :libvirt do |v|
+  config.vm.provider "libvirt" do |v|
     v.memory = $MEMORY
     v.cpus = $CPU
   end

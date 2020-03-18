@@ -29,5 +29,6 @@ install:
 - vagrant --version
 - sudo vagrant plugin install vagrant-libvirt
 script:
+- sudo vagrant validate
 - sudo vagrant up --provider=libvirt
 - sudo vagrant destroy -f

@@ -1,4 +1,4 @@
-![Build Status](https://img.shields.io/travis/com/gepardec/vagrant-okd?style=flat-square)
+![Travis build](https://img.shields.io/travis/com/gepardec/vagrant-okd?label=linux-pipeline&style=flat-square)
 ![gplv3](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg?style=flat-square)
 ![maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
 <p align="right">
