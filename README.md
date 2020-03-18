@@ -1,5 +1,6 @@
-![](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg)
-![Maintenance](https://img.shields.io/maintenance/yes/2020)
+![Build Status](https://img.shields.io/travis/com/gepardec/vagrant-okd?style=flat-square)
+![gplv3](https://img.shields.io/badge/license-GPL%20v3.0-brightgreen.svg?style=flat-square)
+![maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
 <p align="right">
 <img alt="gepardec" width=100px src="https://www.gepardec.com/files/gepardec_logo_light_background@2000w.png">
 </p>
@@ -96,3 +97,6 @@ $BASEOS = "centos/7"
 $SSH=2225
 #########################
 ```
+
+
+<!-- https://stackoverflow.com/questions/31828555/using-vagrant-on-cloud-ci-services/60380518#60380518 -->
