@@ -9,7 +9,8 @@
         var: ansible_facts
         verbosity: 2
     - debug: 
-        var: ansible_facts['eth0']['ipv4']['address']
+        # https://stackoverflow.com/questions/31310688/conditionally-define-variable-in-ansible
+        msg: "{{ ansible_facts['eth1']['ipv4']['address'] if ansible_facts['virtualization_type'] == 'virtualbox' else ansible_facts['eth0']['ipv4']['address'] | default('127.0.0.1')}}"
         verbosity: 1
   tasks:
     - name: create docker config.json
@@ -23,6 +24,6 @@
     - include_role:
         name: gepardec.okd
       vars: 
-        okd_public_hostname: "{{ ansible_facts['eth0']['ipv4']['address'] }}"
+        okd_public_hostname: "{{ ansible_facts['eth0']['ipv4']['address'] if ansible_facts['virtualization_type'] == 'virtualbox' else ansible_facts['eth1']['ipv4']['address'] | default('127.0.0.1')}}"
 ...
     

@@ -1,5 +1,6 @@
 version: "~> 1.0"
-os: bionic
+os: linux
+dist: bionic
 language: python
 cache:
   directories:
@@ -26,5 +27,6 @@ install:
   - sudo dpkg -i vagrant_2.2.7_x86_64.deb
   - vagrant --version
   - sudo vagrant plugin install vagrant-libvirt
-script: sudo vagrant up --provider=libvirt; sudo vagrant destroy -f
-
+script: 
+  - sudo vagrant up --provider=libvirt
+  - sudo vagrant destroy -f
