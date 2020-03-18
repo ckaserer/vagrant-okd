@@ -3,7 +3,7 @@
 
 #########################
 $CPU = 2
-$MEMORY = 2048
+$MEMORY = 4096
 $CPUEXECUTIONCAP = 50 # does not work with hyper-v
 $IP = "192.168.0.5"   # does not work with hyper-v # https://www.vagrantup.com/docs/hyperv/limitations.html
 $BASEOS = "centos/7"
@@ -20,6 +20,11 @@ Vagrant.configure("2") do |config|
   end
   
   config.vm.provider "hyperv" do |v|
+    v.memory = $MEMORY
+    v.cpus = $CPU
+  end
+
+  config.vm.provider :libvirt do |v|
     v.memory = $MEMORY
     v.cpus = $CPU
   end
