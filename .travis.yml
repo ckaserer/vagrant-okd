@@ -12,7 +12,7 @@ notifications:
   slack:
     if: branch = master
     rooms:
-      secure: NGxZDKukFf9KwNRiAZXqJR+/SDZUBl0AaNThOL6F0Aj2c1Mp9Tp6N5+5Oubj8seO4UMpkRWUS3xQCtrlS8HYvCdDN8/jW+unUAnuc9pcgA86qFkGsfYKG4mabHqJfUKjWxCHKG1q1XIdULcahzzcKGLqjfuN8I/meemb7cxiCJpJItjd4L7vDFbaU1ALstzUJ3kDqfnjSazjKBgs6xMoajjP3mBao/zCoMQBkeVZdtjMqspDZP4EEs6NJsI8QmjeGxtV8SJ3ErqlrvvsE2YLrF970D2VWaFmGpm6uPQUN9n+R5/l0HM/evgKZB8za0uOYZcwAV23Ldkh7sowXZXXthbpH7Lu5TmD4Lt3HwbNet6D7pjxb+9kJfNlvyemWDETbMDP2oewMGeJ4J0GT126EeYJpgFcQU/PYMWMZGmMbTc8NoEfg7sf8sb+DKIp9EfUn8UHvsStSb/9HHQaeTePvRsT4ZtMbPlP+sq/wFYaVOHUXl/04dt15yykzTdfZX9SEO0zlnIxL4svBcXOsPHd4Odm2stxiB0iP+KUts2rGgzUgzkFdjEUg+afbqQN/IDc1nUdFQrZGzABBPJ7dylZiPhGXvpDjeX9yECevMX1y3eK9jHNPsi5xSWk9i6sE01GtlUAZW907rTxQE4hPdcuq6zJGcxjefrJI23In48yGQs=
+      secure: nN90UuGNPfq7n0BdJI4oI7vsKIT3wUu7V3VoE28f8pXkJLXBuYocUvuQDaGY+Q3q3BSBNQTQhNRS4El9Ya7oR6zXMCuqQQ/ho1IRkynzyryzTnZR2duWx6BbIJaHKO1VtGgQNSdGNkCXNVokOlBh52WIq5Xd6vpIEw+p6Z+qjJj/EFOg9KXugcTCX0CR3a5ykxOWJ7ldVLPKMUCfN7r9NnpF1CDxugrybSZ9R62dPU/W+O54bsn6RcMMpL4ayeu9SLMi2/MS/jj37r2/p9o8p/Ckq3GeFR1t536/gS9ng6k8ZDp/7UZJ3p0YNgpCwt37+DViU1yQKnUHGAV21IWTG4wpi06HPIDum5u6EKGrIfBddgisCP7lV43De/Y8QqgcY981Cd3eBh3iAWOAcWWPmfGucn87q/DEU5QFEuOTDzXqYjulEnjHhxrW5NnNi7c83R9WZLxbldBuIIhWWSd8ZZrIFHobr7iYAhAM/j77k1w26txL8+TXWdZ8oxWN01BKjhzMscIjVpoVNUr+Y3BG2pqQTTrw625l+HwdyS0v7fj/Vb/XeRMuTzPtsoS27U3ughqZuYJhv2k8zE2zs+ipPnXiUCmLKEiAP5UTbX3zs8//E0h0kVX79oxFsxgFRHfp3kCaKoKCyqnj/FWJBYZKTtGk/WYolEXPYNxntS/exwE=
     template:
     - "%{commit_subject}"
     - build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) @%{branch}
