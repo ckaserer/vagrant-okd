@@ -1,0 +1,30 @@
+version: "~> 1.0"
+os: bionic
+language: python
+cache:
+  directories:
+  - /home/travis/.vagrant.d/boxes
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+  slack:
+    if: branch = master
+    rooms:
+      secure: IvPxboLCvxBJVwd+yLAzA2eACO/NhD+E1i2p6EljzPNx//gaHJM0AX4P1JZq8sTZ+NSaSWX9KZeZXqQFtOYjQAbg4RszFq8gxGPCdDHPyDz+IPPW3QlsEGupEy1lB14xO08tA7o4/Q92jIJ35nXJr0nzvFKinzn+C8M6wQUzLHHo82kw1kI9BjJyy40zJC6QJAn8qan7NsJ2qIUqRSXV9uO5+J0R5feRoWMqj33WJbTHEsQP9B022iC7lULbSkJujW4pCr6ZmPaz2FVzS0Gm9RhlY/aS+LUfzC6gCPyASsDFALrI9xBPqbjse6cYIAyQdOw6PeD78nBLy9FkdSy5IIc1JwXm6cgKlquNfXSm636kZKiFsX/aDmEJkFo/QLDSOg6IbrGJY3NMLGFsyq1atj8kvdTlJHtgo6POnH51nczeF23Tun13RjYNpNWcDAjwe9yBvGJl8VUtVBeVvrYgkWEw2ULHafIUGXlkuL8LYxknov5s1hsz7/Fxx68k3c+av892PE98lUlhc1HcrO79J/S7izUzwKlngCJUCrF7EZBycrbJ2vWzPOwyWNQqkMgON6EAWj8memROSNL25fAyZ2rWefD8pZzJYUNmEdekd99jcHFSpGftUcfhzcv9OVjsQojuT2iQf4swd3gOEc8eYEK7m3hP2TedFtRA/CQgBBE=
+    template:
+    - "%{commit_subject}"
+    - build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) @%{branch}
+    - by %{author} %{result} in %{duration}
+    on_success: change
+    on_failure: always
+env:
+  global:
+install: 
+  - sudo apt-get update && sudo apt-get install -y bridge-utils dnsmasq-base ebtables libvirt-bin libvirt-dev qemu-kvm qemu-utils ruby-dev
+  - sudo wget -nv https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb
+  - sudo dpkg -i vagrant_2.2.7_x86_64.deb
+  - vagrant --version
+  - sudo vagrant plugin install vagrant-libvirt
+script: sudo vagrant up --provider=libvirt; sudo vagrant destroy -f
+
