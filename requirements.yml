@@ -1,4 +1,4 @@
 - gepardec.basics
-- gepardec.ntp
-- gepardec.docker
+- geerlingguy.ntp
+- geerlingguy.docker
 - gepardec.okd

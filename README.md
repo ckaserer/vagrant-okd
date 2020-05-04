@@ -7,6 +7,12 @@
 <br>
 <br>
 
+# Archived Repository!
+
+The installation mechanism for okd has been updated with version 4.x. The new installation procedure is similar to the installation procedure for OpenShift. okd is no longer a platform that you can install on a supported operating system. Starting with version 4 it is shipped with it is own operating system - Fedora CoreOS. As the installation of an operating system is not typically covered via ansible we have decided to archive our okd ansible role and by association our vagrant-okd repository. If you want to run okd 4.x you can check out the official okd website at [https://www.okd.io](https://www.okd.io).
+
+---
+
 # vagrant-okd
 
 We love to run okd on our workstations, but everybody uses a different operating system (Linux / MacOS / Windows). To reduce the pain of various nuances in the operating systems we have put okd in a vm that can be provisioned via Vagrant. Putting okd in a vm gives us the added benefit of controlling the resources it can consume on our workstations. 

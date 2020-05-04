@@ -20,7 +20,7 @@
     - include_role:
         name: gepardec.basics
     - include_role:
-        name: gepardec.ntp
+        name: geerlingguy.ntp
     - include_role:
         name: gepardec.okd
       vars: 
